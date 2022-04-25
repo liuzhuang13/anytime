@@ -1,0 +1,6 @@
+cityscapesscripts
+numpy
+Pillow
+tensorboardX
+tqdm
+yacs
