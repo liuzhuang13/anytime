@@ -1,8 +1,8 @@
-# [Anytime Dense Prediction with Confidence Adaptivity](https://arxiv.org/abs/2104.00749)
+# [Anytime Dense Prediction with Confidence Adaptivity](https://openreview.net/forum?id=kNKFOXleuC)
 
 Official PyTorch implementation for **Confidence Adaptivity**, from the following paper:
 
-[Anytime Dense Prediction with Confidence Adaptivity](https://arxiv.org/abs/2104.00749). ICLR 2022.\
+[Anytime Dense Prediction with Confidence Adaptivity](https://openreview.net/forum?id=kNKFOXleuC). ICLR 2022.\
 [Zhuang Liu](https://liuzhuang13.github.io), [Zhiqiu Xu](https://www.linkedin.com/in/oscar-xu-1250821a1/), [Hung-ju Wang](https://www.linkedin.com/in/hungju-wang-5a5124172/), [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/) and [Evan Shelhamer](http://imaginarynumber.net/)\
 UC Berkeley, Adobe Research
 
