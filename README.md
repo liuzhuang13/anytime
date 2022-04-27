@@ -22,9 +22,9 @@ Our full method, named **Anytime Dense Prediction with Confidence (ADP-C)**, ach
 |     Setting (HRNet-W48)     | model | exit1 | exit2 | exit3 |  exit4   | mean mIoU | exit1 | exit2 | exit3 |   exit4   | mean GFLOPs |
 | ------------------------- | :---: | :---: | :---: | :---: | :------: | :---------: | :---: | :---: | :---: | :-------: | :---------: |
 |          HRNet-W48          |   -   |   -   |   -   |   80.7   |      -      |   -   |   -   |   -   |   696.2   |      -      |
-|         EE (HRNet)          | [model](https://drive.google.com/file/d/11AnwHiNmWZqtXbulJOGWTUCjlYfFweFB/view?usp=sharing) | 34.3  | 59.0  | 76.9  |   80.4   |    62.7     | 521.6 | 717.9 | 914.2 |  1110.5   |    816.0    |
-|       EE + RH (HRNet)       | [model](https://drive.google.com/file/d/1zkgTRm8HyBqKA7dolM1i3AW6vs2V9AkE/view?usp=sharing) | 44.6  | 60.2  | 76.6  |   79.9   |    65.3     | 41.9  | 105.6 | 368.0 |   701.3   |    304.2    |
-| ADP-C: EE + RH + CA (HRNet) | [model](https://drive.google.com/file/d/1Un4XDqPOubGnKmm2vUis5CHM-EFOZsm0/view?usp=sharing) | 44.3  | 60.1  | 76.8  | **81.3** |  **65.7**   | 41.9  | 93.9  | 259.3 | **387.1** |  **195.6**  |
+|         EE           | [model](https://drive.google.com/file/d/11AnwHiNmWZqtXbulJOGWTUCjlYfFweFB/view?usp=sharing) | 34.3  | 59.0  | 76.9  |   80.4   |    62.7     | 521.6 | 717.9 | 914.2 |  1110.5   |    816.0    |
+|       EE + RH        | [model](https://drive.google.com/file/d/1zkgTRm8HyBqKA7dolM1i3AW6vs2V9AkE/view?usp=sharing) | 44.6  | 60.2  | 76.6  |   79.9   |    65.3     | 41.9  | 105.6 | 368.0 |   701.3   |    304.2    |
+| ADP-C: EE + RH + CA  | [model](https://drive.google.com/file/d/1Un4XDqPOubGnKmm2vUis5CHM-EFOZsm0/view?usp=sharing) | 44.3  | 60.1  | 76.8  | **81.3** |  **65.7**   | 41.9  | 93.9  | 259.3 | **387.1** |  **195.6**  |
 
 
 
@@ -74,7 +74,7 @@ This should give
 
 ## Train
 
-There are two configurations for the backbone HRnet model, `w48.yaml` and `w18.yaml` under `experimens/cityscapes`. Note that the following commands are for `HRNet-w48` as backbone. Please change `EXIT.INTER_CHANNEL` to `64` when using `w18` as backbone.
+There are two configurations for the backbone HRnet model, `w48.yaml` and `w18.yaml` under `experimens/cityscapes`. Note that the following commands are for using `HRNet-w48` as backbone. Please change `EXIT.INTER_CHANNEL` to `64` when using `w18` as backbone.
 
 **Early Exits (EE)**
 
@@ -128,8 +128,6 @@ Evaulation results will be generated at the end of training.
 ```
 python tools/test_ee.py --cfg <Your output directoy>/config.yaml
 ```
-
-This command will use the `final_state.pth` in your output directory.
 
 **Customized Evaluation**
 
