@@ -71,6 +71,20 @@ This should give
 44.34	60.13	76.82	81.31	65.65
 ```
 
+**ADP-C (EE + RH + CA)** (w18) [Pretrained w18 with ADP-C](https://drive.google.com/file/d/1XxEH0acJZUGO2UDquCZx2asjHyneKYNT/view?usp=sharing)
+```bash
+python tools/test_ee.py \
+--cfg experiments/cityscapes/w18.yaml MODEL.NAME model_anytime  \
+EXIT.TYPE 'flex' EXIT.INTER_CHANNEL 64 \
+MASK.USE True MASK.CONF_THRE 0.998 \
+TEST.MODEL_FILE <PRETRAINED MODEL>.pth
+```
+
+This should give
+```
+40.83	48.19	68.26	77.02	58.57
+```
+
 
 ## Train
 
@@ -127,13 +141,6 @@ Evaulation results will be generated at the end of training.
 
 ```
 python tools/test_ee.py --cfg <Your output directoy>/config.yaml
-```
-
-**Customized Evaluation**
-
-```
-python tools/test.py --cfg experiments/cityscapes/<Your config file>.yaml \
-TEST.MODEL_FILE <Your model>.pth 
 ```
 
 ## Acknowledgement
