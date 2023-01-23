@@ -1,4 +1,4 @@
-# [Anytime Dense Prediction with Confidence Adaptivity](https://openreview.net/forum?id=kNKFOXleuC)
+# [Anytime Dense Prediction with Confidence Adaptivity](https://arxiv.org/abs/2104.00749)
 
 Official PyTorch implementation for the following paper:
 
