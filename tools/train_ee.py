@@ -249,7 +249,7 @@ def main():
     else:
         raise ValueError('Only Support SGD optimizer')
 
-    epoch_iters = np.int(train_dataset.__len__() / 
+    epoch_iters = int(train_dataset.__len__() / 
                         config.TRAIN.BATCH_SIZE_PER_GPU / len(gpus))
     best_mIoU = 0
     last_epoch = 0
