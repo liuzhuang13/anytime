@@ -392,7 +392,7 @@ class HighResolutionNet(nn.Module):
             [stage1_out_channel], num_channels)
         self.stage2, pre_stage_channels = self._make_stage(
             self.stage2_cfg, num_channels)
-        self.exit2 = self.get_exit_layer(np.int(np.sum(pre_stage_channels)), config, exit_number=2)
+        self.exit2 = self.get_exit_layer(int(np.sum(pre_stage_channels)), config, exit_number=2)
 
         if self.mask_cfg.USE:
             used_conv = mask_conv
@@ -409,7 +409,7 @@ class HighResolutionNet(nn.Module):
             pre_stage_channels, num_channels)
         self.stage3, pre_stage_channels = self._make_stage(
             self.stage3_cfg, num_channels)
-        self.exit3 = self.get_exit_layer(np.int(np.sum(pre_stage_channels)), config, exit_number=3)
+        self.exit3 = self.get_exit_layer(int(np.sum(pre_stage_channels)), config, exit_number=3)
 
         self.stage4_cfg = extra['STAGE4']
         num_channels = self.stage4_cfg['NUM_CHANNELS']
@@ -421,7 +421,7 @@ class HighResolutionNet(nn.Module):
         self.stage4, pre_stage_channels = self._make_stage(
             self.stage4_cfg, num_channels, multi_scale_output=True)
         
-        last_inp_channels = np.int(np.sum(pre_stage_channels))
+        last_inp_channels = int(np.sum(pre_stage_channels))
         self.last_layer = self.get_exit_layer(last_inp_channels, config, last=True)
 
         print(sum(p.numel() for p in self.parameters() if p.requires_grad))

@@ -120,8 +120,8 @@ class Cityscapes(BaseDataset):
         batch, _, ori_height, ori_width = image.size()
         assert batch == 1, "only supporting batchsize 1."
         image = image.numpy()[0].transpose((1,2,0)).copy()
-        stride_h = np.int(self.crop_size[0] * 1.0)
-        stride_w = np.int(self.crop_size[1] * 1.0)
+        stride_h = int(self.crop_size[0] * 1.0)
+        stride_w = int(self.crop_size[1] * 1.0)
         final_pred = torch.zeros([1, self.num_classes,
                                     ori_height,ori_width]).cuda()
         for scale in scales:
@@ -138,9 +138,9 @@ class Cityscapes(BaseDataset):
                 preds = preds[:, :, 0:height, 0:width]
             else:
                 new_h, new_w = new_img.shape[:-1]
-                rows = np.int(np.ceil(1.0 * (new_h - 
+                rows = int(np.ceil(1.0 * (new_h - 
                                 self.crop_size[0]) / stride_h)) + 1
-                cols = np.int(np.ceil(1.0 * (new_w - 
+                cols = int(np.ceil(1.0 * (new_w - 
                                 self.crop_size[1]) / stride_w)) + 1
                 preds = torch.zeros([1, self.num_classes,
                                            new_h,new_w]).cuda()
